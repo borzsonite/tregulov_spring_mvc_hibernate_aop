@@ -23,4 +23,10 @@ public class EmployeeDAOImp implements EmployeeDAO {
                 .getResultList();
         return allEmployees;
     }
+
+    @Override
+    public void saveEmployee(Employee employee) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(employee);
+    }
 }

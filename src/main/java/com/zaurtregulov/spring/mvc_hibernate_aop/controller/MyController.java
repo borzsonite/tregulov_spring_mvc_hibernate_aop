@@ -33,4 +33,11 @@ public class MyController {
 
         return "employee-info";
     }
+
+    @RequestMapping("/saveEmployee")
+    public String saveEmployee() {
+
+        employeeService.saveEmployee();
+        return "redirect:/";
+    }
 }
