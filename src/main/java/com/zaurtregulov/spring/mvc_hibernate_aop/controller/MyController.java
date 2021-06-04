@@ -42,4 +42,11 @@ public class MyController {
         employeeService.saveEmployee(employee);
         return "redirect:/";
     }
+
+    @RequestMapping("/updateInfo")
+    public String updateEmployee(@RequestParam("empId") int id, Model model) {
+        Employee employee = employeeService.getEmployee(id);
+        model.addAttribute("employee", employee);
+        return "employee-info";
+    }
 }
